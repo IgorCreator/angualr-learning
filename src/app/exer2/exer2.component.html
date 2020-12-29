@@ -1,0 +1,11 @@
+<h5>2nd exercise with log pressed button</h5>
+
+<button class="btn btn-primary" (click)="onToggleDetails()" [innerText]="changeDetailButtonName()"></button>
+<p *ngIf="isDisplayDetails">Super secret password: "Sesame_open"</p>
+
+<div *ngFor="let log of logs; let i = index"
+     [ngStyle]="{backgroundColor: i >= 4 ? 'deepskyblue' : 'transparent'}"
+     [ngClass]="{after5thLogItemStyle: i >= 4 }">
+    >  pressed in: {{ log }}
+</div>
+

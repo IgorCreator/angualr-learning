@@ -1,0 +1,10 @@
+.successParagraph {
+  padding: 20px;
+  background-color: palegreen;
+  border: 1px solid green;
+}
+.warningParagraph {
+  padding: 20px;
+  background-color: mistyrose;
+  border: 1px solid red;
+}

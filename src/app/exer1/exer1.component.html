@@ -1,0 +1,6 @@
+<h5>1st exercise with warning/success notification</h5>
+<label>Enter your name: </label>
+<input type="text" [(ngModel)]="username">
+
+<p *ngIf="usernameEmpty()"  [ngClass]="{warningParagraph: username === ''}">Warning message: "Type your name!"</p>
+<p *ngIf="!usernameEmpty()" [ngClass]="{successParagraph:  username !== ''}">You are so successfull</p>
