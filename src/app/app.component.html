@@ -1,7 +1,53 @@
 <div class="container">
-  <div class="row">
-    <div class="col-xs-12">
-      <h3>Sandbox with {{title}}</h3>
+  <hr>
+  <div class="chapter 5 end">
+    <app-gamecontrol
+      (intervalFired)="onIntervalFired($event)">
+    </app-gamecontrol>
+    <p>Odd numbers: {{oddArray.length}}</p>
+    <p>Even numbers: {{evenArray.length}}</p>
+
+    <table>
+      <tr>
+        <td>Odd</td>
+        <td>Even</td>
+      </tr>
+      <tr>
+        <td>
+          <app-odd *ngFor="let odd of oddArray" [number]="odd"></app-odd>
+        </td>
+        <td>
+          <app-even *ngFor="let even of evenArray" [number]="even"></app-even>
+        </td>
+      </tr>
+    </table>
+  </div>
+  <br>
+  <hr>
+
+  <div class="chapter 5">
+    <app-cockpit
+      (serverCreated)="onServerAdded($event)"
+      (bpCreated)="onServerBlueprintAdded($event)"
+    ></app-cockpit>
+    <hr>
+    <div class="row">
+      <div class="col-md-12">
+        <button class="btn btn-primary" (click)="onChangeFirst()">Change first</button>
+        <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy first</button>
+        <app-server-element *ngFor="let serverElement of  serverElements" [srvElement]="serverElement">
+          <p #contentParagraph>
+            <strong *ngIf="serverElement.type === 'server'" style="color: red">{{serverElement.content}}</strong>
+            <em *ngIf="serverElement.type === 'blueprint'">{{serverElement.content}}</em>
+          </p>
+        </app-server-element>
+      </div>
     </div>
   </div>
+
+  <hr>
+  <div class="chapter 1-4">
+    <app-servers></app-servers>
+  </div>
+
 </div>
