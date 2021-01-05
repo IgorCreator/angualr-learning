@@ -1,8 +1,0 @@
-<div>
-  <hr>
-  <p>Enter your value: </p> <input type="text" [(ngModel)]="serverId">
-  <p
-    [ngStyle]="{backgroundColor: getColor()}"
-    [ngClass]="{online: serverStatus === 'online'}">
-    {{'Server'}} with ID {{ serverId }} is {{ getServiceStatus() }}</p>
-</div>

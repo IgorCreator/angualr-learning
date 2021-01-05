@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, EventEmitter, Output} from '@angular/core';
 import {Recipe} from '../recipe.model';
 
 @Component({
@@ -8,9 +8,11 @@ import {Recipe} from '../recipe.model';
 })
 export class RecipeListComponent implements OnInit {
 
+  @Output() recipeWasSelected = new EventEmitter<Recipe>();
+
   recipes: Recipe[] = [
-    new Recipe('Test', 'Description', 'https://ca-times.brightspotcdn.com/dims4/default/9587383/2147483647/strip/true/crop/3000x2000+0+0/resize/1486x991!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F2c%2F81%2Ffcf6a0a04032869986b92e136c2c%2Fla-times-recipe-database-cooking-newsletter.jpg'),
-    new Recipe('Test', 'Description', 'https://ca-times.brightspotcdn.com/dims4/default/9587383/2147483647/strip/true/crop/3000x2000+0+0/resize/1486x991!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F2c%2F81%2Ffcf6a0a04032869986b92e136c2c%2Fla-times-recipe-database-cooking-newsletter.jpg')
+    new Recipe('Stroganov', 'Delish', 'https://www.recipetineats.com/wp-content/uploads/2018/01/Beef-Stroganoff_2-1-1.jpg'),
+    new Recipe('French Toast', 'Tasty', 'https://recipetineats.com/wp-content/uploads/2014/06/French-Toast_3.jpg')
   ];
 
   constructor() { }
@@ -18,4 +20,7 @@ export class RecipeListComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onRecipeSelected(recipeElement: Recipe) {
+    this.recipeWasSelected.emit(recipeElement);
+  }
 }

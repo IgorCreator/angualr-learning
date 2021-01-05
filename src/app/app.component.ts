@@ -7,4 +7,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-app-demo-proj';
+  loadedFeature = 'Recipes';
+
+  onFeatureSelected(feature: string) {
+    this.loadedFeature = feature;
+  }
 }
