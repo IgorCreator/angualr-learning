@@ -2,12 +2,9 @@ import {
   AfterContentInit,
   AfterViewInit,
   Component, ContentChild,
-  DoCheck,
   ElementRef,
   Input,
-  OnChanges,
   OnInit,
-  SimpleChanges,
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
@@ -18,7 +15,7 @@ import {
   styleUrls: ['./server-element.component.css'],
   encapsulation: ViewEncapsulation.Emulated
 })
-export class ServerElementComponent implements OnInit, OnChanges, DoCheck, AfterViewInit, AfterContentInit {
+export class ServerElementComponent implements OnInit, AfterViewInit, AfterContentInit {
 
   @Input('srvElement') element: { type: string, name: string, content: string };
   @Input() name: string;
@@ -31,12 +28,6 @@ export class ServerElementComponent implements OnInit, OnChanges, DoCheck, After
   ngOnInit(): void {
     console.log('Text content on the component: ' + this.header.nativeElement.textContent);
     console.log('Text content on the paragraph: ' + this.paragraph.nativeElement.textContent);
-  }
-
-  ngOnChanges(changes: SimpleChanges) {
-  }
-
-  ngDoCheck(): void {
   }
 
   ngAfterContentInit(): void {
