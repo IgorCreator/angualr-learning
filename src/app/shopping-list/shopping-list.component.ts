@@ -18,11 +18,11 @@ export class ShoppingListComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  addIngredient(ingredient: Ingredient) {
+  addIngredient(ingredient: Ingredient): void {
     this.ingredients.push(ingredient);
   }
 
-  deleteIngredient(ingredient: Ingredient) {
+  deleteIngredient(ingredient: Ingredient): void {
     this.ingredients.forEach((ing, index) => {
       if (ing.name === ingredient.name) {this.ingredients.splice(index, 1); }
     });
