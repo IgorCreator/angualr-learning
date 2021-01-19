@@ -5,7 +5,9 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { Exer1Component } from './exer1/exer1.component';
 import { Exer2Component } from './exer2/exer2.component';
+
 import { Exer3Module} from './exer3/exer3.module';
+import { Exer4Module } from './exer4/exer4.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { Exer3Module} from './exer3/exer3.module';
   imports: [
     BrowserModule,
     FormsModule,
-    Exer3Module
+    Exer3Module,
+    Exer4Module
   ],
   providers: [],
   bootstrap: [AppComponent]

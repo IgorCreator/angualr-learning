@@ -15,8 +15,8 @@ export class Exer3Component implements OnInit {
   }
 
   onIntervalFired(firedNumber: number): void {
-    if (firedNumber % 2 === 0) {this.addOddComponent(firedNumber)}
-    else {this.addEvenComponent(firedNumber)};
+    if (firedNumber % 2 === 0) { this.addOddComponent(firedNumber); }
+    else { this.addEvenComponent(firedNumber); }
     console.log('current number at: ' + firedNumber);
   }
 
