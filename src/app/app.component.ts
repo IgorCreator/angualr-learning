@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {AccountsService} from './shared/accounts.service';
-import {Account} from './shared/account';
+import {AccountsService} from './old/shared/accounts.service';
+import {Account} from './old/shared/account';
 
 @Component({
   selector: 'app-root',

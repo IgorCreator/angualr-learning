@@ -6,9 +6,9 @@ import {
   EventEmitter
 } from '@angular/core';
 
-import { Account } from '../../shared/account';
-import { AccountsService } from '../../shared/accounts.service';
-import {LoggingService} from '../../shared/logging.service';
+import { Account } from '../shared/account';
+import { AccountsService } from '../shared/accounts.service';
+import {LoggingService} from '../shared/logging.service';
 import {logging} from 'protractor';
 
 @Component({

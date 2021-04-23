@@ -13,13 +13,14 @@ import { GamecontrolComponent } from './old/gamecontrol/gamecontrol.component';
 import { OddComponent } from './old/odd/odd.component';
 import { EvenComponent } from './old/even/even.component';
 import { BasicDirectiveComponent } from './old/basic-directive/basic-directive.component';
-import {BasicHighlightDirective} from './shared/basic-highlight.directive';
-import {BetterHighlightDirective} from './shared/better-highlight.directive';
-import { UnlessDirective } from './shared/unless.directive';
-import {LoggingService} from './shared/logging.service';
-import {AccountsService} from './shared/accounts.service';
+import {BasicHighlightDirective} from './old/shared/basic-highlight.directive';
+import {BetterHighlightDirective} from './old/shared/better-highlight.directive';
+import { UnlessDirective } from './old/shared/unless.directive';
+import {LoggingService} from './old/shared/logging.service';
+import {AccountsService} from './old/shared/accounts.service';
 import {NewAccountComponent} from './old/new-account/new-account.component';
 import {AccountComponent} from './old/account/account.component';
+import {AppRoutingProjModule} from './routing/app-routing-proj.module';
 
 @NgModule({
   declarations: [
@@ -38,11 +39,12 @@ import {AccountComponent} from './old/account/account.component';
     BetterHighlightDirective,
     UnlessDirective,
     AccountComponent,
-    NewAccountComponent
+    NewAccountComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingProjModule
   ],
   providers: [AccountsService, LoggingService],
   bootstrap: [AppComponent]

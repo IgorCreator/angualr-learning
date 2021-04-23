@@ -19,7 +19,7 @@ export class BetterHighlightDirective implements OnInit {
 
   //Version 2 of changing color with @HostBinding
   @HostBinding('style.backgroundColor') backgroundColor: string;
-  @HostListener('mouseenter') mouseOver(): void{
+  @HostListener('mouseenter') mouseOver(): void {
     this.backgroundColor = this.highlightColor;
   }
 
