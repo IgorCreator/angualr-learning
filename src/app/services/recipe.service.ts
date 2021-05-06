@@ -27,4 +27,8 @@ export class RecipeService {
   addIngredientsToShoppingList(ingredients: Ingredient[]): void {
     this.slService.addIngredients(ingredients);
   }
+
+  getRecipe(id: number): Recipe {
+    return this.recipes.slice()[id]; // Give copy of recipes and after get id from copy
+  }
 }
