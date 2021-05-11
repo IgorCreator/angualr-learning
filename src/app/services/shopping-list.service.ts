@@ -1,9 +1,9 @@
-import {EventEmitter} from '@angular/core';
 import {Ingredient} from '../shared/ingredient.module';
+import {Subject} from 'rxjs';
 
 export class ShoppingListService {
 
-  ingredientsChanged = new EventEmitter<Ingredient[]>();
+  ingredientsChanged = new Subject<Ingredient[]>();
 
   private ingredients: Ingredient[] = [
     new Ingredient('Apples', 5),
@@ -21,12 +21,12 @@ export class ShoppingListService {
   // TODO: Add logic to delete duplications
   addIngredient(newIngredient: Ingredient): void {
     this.ingredients.push(newIngredient);
-    this.ingredientsChanged.emit(this.ingredients.slice());
+    this.ingredientsChanged.next(this.ingredients.slice());
   }
   // TODO: Add logic to delete duplications
   addIngredients(newIngredients: Ingredient[]): void {
     this.ingredients.push(... newIngredients);
-    this.ingredientsChanged.emit(this.ingredients.slice());
+    this.ingredientsChanged.next(this.ingredients.slice());
   }
 
   removeIngredient(ingredient: Ingredient): void {
@@ -35,6 +35,6 @@ export class ShoppingListService {
         this.ingredients.splice(index, 1);
       }
     });
-    this.ingredientsChanged.emit(this.ingredients.slice());
+    this.ingredientsChanged.next(this.ingredients.slice());
   }
 }

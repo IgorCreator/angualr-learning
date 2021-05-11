@@ -1,15 +1,12 @@
-import {EventEmitter, Injectable} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {Recipe} from '../recepies/recipe.model';
 import {Ingredient} from '../shared/ingredient.module';
 import {ShoppingListService} from './shopping-list.service';
 
 @Injectable()
 export class RecipeService {
-  recipeSelector = new EventEmitter<Recipe>();
-
   constructor(private slService: ShoppingListService) {
   }
-
 
   private recipes: Recipe[] = [
     new Recipe('Stroganov', 'Delish', 'https://www.recipetineats.com/wp-content/uploads/2018/01/Beef-Stroganoff_2-1-1.jpg', [new Ingredient('Meat', 1), new Ingredient('Mushrooms', 5)]),
