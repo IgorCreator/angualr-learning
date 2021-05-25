@@ -23,6 +23,9 @@ import {AccountComponent} from './old/account/account.component';
 import {AppRoutingProjModule} from './old/routing/app-routing-proj.module';
 import {BasicFormComponent} from './forms-td/basic-form/basic-form.component';
 import {BasicFormReactiveComponent} from './forms-reactive/basic-form-reactive/basic-form-reactive.component';
+import {FormTdProjectExComponent} from './form-td-project-ex/form-td-project-ex.component';
+import {NameValidatorDirective} from './form-td-project-ex/name-validator.directive';
+import {EmailValidatorDirective} from './form-td-project-ex/email-validator.directive';
 
 @NgModule({
   declarations: [
@@ -44,6 +47,9 @@ import {BasicFormReactiveComponent} from './forms-reactive/basic-form-reactive/b
     NewAccountComponent,
     BasicFormComponent,
     BasicFormReactiveComponent,
+    FormTdProjectExComponent,
+    EmailValidatorDirective,
+    NameValidatorDirective
   ],
   imports: [
     BrowserModule,

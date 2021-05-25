@@ -58,11 +58,11 @@ export class BasicFormReactiveComponent implements OnInit {
     return null;
   }
 
-  forbiddenEmails(contorl: FormControl): Promise<any> | Observable<any> {
+  forbiddenEmails(control: FormControl): Promise<any> | Observable<any> {
     const promise = new Promise<any>((resolve, reject) =>
       {
         setTimeout(() => {
-          if (contorl.value === 'test@test.com') {
+          if (control.value === 'test@test.com') {
             resolve({'emailIsForbidden': true});
           } else {
             resolve(null);

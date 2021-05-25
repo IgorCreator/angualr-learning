@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row toprow">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 col-lg-6 col-lg-offset-3">
+      <form (ngSubmit)="onSubmit()" #form="ngForm">
+        <div class="user-data" ngModelGroup="userData" #userGroup="ngModelGroup">
+          <div class="form-group">
+            <label for="project_name">Project name</label>
+            <input
+              type="text"
+              id="project_name"
+              class="form-control"
+              name="project_name"
+              ngModel
+              appNameValidator
+              required>
+              <span class="help-message" *ngIf="userGroup.invalid && userGroup.touched">Project name invalid</span>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input
+            class="form-control"
+            type="email"
+            id="email"
+            name="email"
+            placeholder="User Email (required)"
+            required
+            ngModel
+            appEmailValidator
+            #email="ngModel">
+          <span class="help-message" *ngIf="email.invalid && email.touched">Please enter valid value</span>
+        </div>
+        <div class="form-group">
+          <label>Select project status</label>
+          <select id="projectStatus" class="form-control" [ngModel]="projectStatus" name="projectStatus" required>
+            <option *ngFor="let status of projectStatus" [value]="status">{{status}}</option>
+          </select>
+        </div>
+        <button class="btn btn-primary" type="submit" [disabled]="form.invalid">Submit</button>
+      </form>
+    </div>
+  </div>
+  <hr>
+</div>

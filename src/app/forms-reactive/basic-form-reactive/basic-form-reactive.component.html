@@ -38,8 +38,8 @@
           <h4>Hobbies</h4>
           <button class="btn btn-primary" type="button" (click)="onAddHobby()">Add Hobby</button>
           <div
-            class = "form-group"
-            *ngFor = "let hobbyControl of signupForm.get('hobbies').controls; let i = index">
+            class="form-group"
+            *ngFor="let hobbyControl of signupForm.get('hobbies').controls; let i = index">
             <input type="text" class="form-control" [formControlName]="i">
           </div>
         </div>
