@@ -14,8 +14,11 @@ export class AppComponent implements OnInit{
   oddArray: number[] = [];
 
   accounts: Account[] = [];
+  title: string;
+  filteredStatus = '';
 
   constructor(private accountsService: AccountsService) {
+    this.title = 'In the main sandbox page';
   }
 
   ngOnInit(): void {

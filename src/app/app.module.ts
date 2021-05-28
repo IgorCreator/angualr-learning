@@ -21,11 +21,13 @@ import {AccountsService} from './old/shared/accounts.service';
 import {NewAccountComponent} from './old/new-account/new-account.component';
 import {AccountComponent} from './old/account/account.component';
 import {AppRoutingProjModule} from './old/routing/app-routing-proj.module';
-import {BasicFormComponent} from './forms-td/basic-form/basic-form.component';
-import {BasicFormReactiveComponent} from './forms-reactive/basic-form-reactive/basic-form-reactive.component';
-import {FormTdProjectExComponent} from './form-td-project-ex/form-td-project-ex.component';
-import {NameValidatorDirective} from './form-td-project-ex/name-validator.directive';
-import {EmailValidatorDirective} from './form-td-project-ex/email-validator.directive';
+import {BasicFormComponent} from './old/forms-td/basic-form/basic-form.component';
+import {BasicFormReactiveComponent} from './old/forms-reactive/basic-form-reactive/basic-form-reactive.component';
+import {FormTdProjectExComponent} from './old/form-td-project-ex/form-td-project-ex.component';
+import {NameValidatorDirective} from './old/form-td-project-ex/name-validator.directive';
+import {EmailValidatorDirective} from './old/form-td-project-ex/email-validator.directive';
+import {ShortenPipe} from './old/pipe/shorten.pipe';
+import {FilterPipe} from './old/pipe/filter.pipe';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import {EmailValidatorDirective} from './form-td-project-ex/email-validator.dire
     BasicFormReactiveComponent,
     FormTdProjectExComponent,
     EmailValidatorDirective,
-    NameValidatorDirective
+    NameValidatorDirective,
+    ShortenPipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,

@@ -1,16 +1,25 @@
 <div class="container">
 
-  <div class="chapter 15 handling forms">
+
+  <div class="chapter 17 pipes">
+    <h3>Hello, {{ title | uppercase | shorten:11 | filter:filteredStatus}}</h3>
+    <hr>
+    <div>
+      <input type="text" [ngModel]="filteredStatus">
+    </div>
+  </div>
+
+<!--  <div class="chapter 15 handling forms">-->
 <!--    <h3>Template-driven setting of the form</h3>-->
 <!--    <app-basic-form></app-basic-form>-->
 
 <!--    <h3>Reactive setting of the form</h3>-->
 <!--    <app-basic-form-reactive></app-basic-form-reactive>-->
 
-    <hr>
-    <h3>Template-driven + Reactive form</h3>
-    <app-form-td-project-ex></app-form-td-project-ex>
-  </div>
+<!--    <hr>-->
+<!--    <h3>Template-driven + Reactive form</h3>-->
+<!--    <app-form-td-project-ex></app-form-td-project-ex>-->
+<!--  </div>-->
 
 <!--    <div class="chapter 11 routing-lessons">-->
 <!--      <app-routing-proj></app-routing-proj>-->
