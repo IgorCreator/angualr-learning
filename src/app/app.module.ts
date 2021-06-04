@@ -28,6 +28,10 @@ import {NameValidatorDirective} from './old/form-td-project-ex/name-validator.di
 import {EmailValidatorDirective} from './old/form-td-project-ex/email-validator.directive';
 import {ShortenPipe} from './old/pipe/shorten.pipe';
 import {FilterPipe} from './old/pipe/filter.pipe';
+import {HttpWithAngularComponent} from './http-with-angular/http-with-angular.component';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {AuthInterceptorService} from './http-with-angular/auth-interceptor.service';
+import {LoggingInterceptorService} from './http-with-angular/logging-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -53,15 +57,21 @@ import {FilterPipe} from './old/pipe/filter.pipe';
     EmailValidatorDirective,
     NameValidatorDirective,
     ShortenPipe,
-    FilterPipe
+    FilterPipe,
+    HttpWithAngularComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingProjModule
+    AppRoutingProjModule,
+    HttpClientModule
   ],
-  providers: [AccountsService, LoggingService],
+  providers: [
+    AccountsService,
+    LoggingService,
+    {provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptorService, multi: true}],
   bootstrap: [AppComponent]
 })
 export class AppModule {

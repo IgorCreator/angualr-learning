@@ -1,13 +1,18 @@
 <div class="container">
 
 
-  <div class="chapter 17 pipes">
-    <h3>Hello, {{ title | uppercase | shorten:11 | filter:filteredStatus}}</h3>
-    <hr>
-    <div>
-      <input type="text" [ngModel]="filteredStatus">
-    </div>
+  <div class="chapter 18 http">
+    <app-http-with-angular></app-http-with-angular>
   </div>
+
+<!--  <div class="chapter 17 pipes">-->
+<!--    <h3>Hello, {{ title | uppercase | shorten:11 | filter:filteredStatus}}</h3>-->
+<!--    <h3>Hello, {{ title | uppercase | shorten:11}}</h3>-->
+<!--    <hr>-->
+<!--    <div>-->
+<!--      <input type="text" [ngModel]="filteredStatus">-->
+<!--    </div>-->
+<!--  </div>-->
 
 <!--  <div class="chapter 15 handling forms">-->
 <!--    <h3>Template-driven setting of the form</h3>-->
