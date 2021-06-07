@@ -43,18 +43,18 @@ export class RecipeEditComponent implements OnInit {
         for (const ing of recipe.ingredients) {
           recipeIngredients.push(
             new FormGroup({
-              'name' : new FormControl(ing.name, Validators.required),
-              'amount' : new FormControl(ing.amount, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)])
+              name : new FormControl(ing.name, Validators.required),
+              amount : new FormControl(ing.amount, [Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)])
             })
           );
         }
       }
     }
     this.recipeForm = new FormGroup({
-      'name': new FormControl(recipeName, Validators.required),
-      'description': new FormControl(recipeDesc, Validators.required),
-      'imageUrl': new FormControl(recipeImgPath, Validators.required),
-      'ingredients' : recipeIngredients
+      name: new FormControl(recipeName, Validators.required),
+      description: new FormControl(recipeDesc, Validators.required),
+      imageUrl: new FormControl(recipeImgPath, Validators.required),
+      ingredients : recipeIngredients
     });
   }
 
@@ -85,7 +85,7 @@ export class RecipeEditComponent implements OnInit {
     }));
   }
 
-  onDeleteIngridient(idx: number) {
+  onDeleteIngredient(idx: number): void {
     (this.recipeForm.get('ingredients') as FormArray).removeAt(idx);
   }
 }
