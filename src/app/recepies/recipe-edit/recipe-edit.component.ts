@@ -65,7 +65,7 @@ export class RecipeEditComponent implements OnInit {
       this.recipeForm.valid['imageUrl'],
       this.recipeForm.valid['ingredients']
     );
-    if(this.editMode){
+    if (this.editMode){
       this.recipeService.updateRecipe(this.id, recipe);
     } else {
       this.recipeService.addRecipe(recipe);
