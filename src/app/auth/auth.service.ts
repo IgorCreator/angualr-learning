@@ -14,7 +14,7 @@ interface AuthRespData{
 @Injectable({providedIn: 'root'})
 export class AuthService {
   error = new Subject<string>();
-  apiKey = 'AIzaSyAenXOPDSQmV8L77laWx_-m5X5nX1k4MqQ';
+  apiKey = '';
   authServiceUrl = 'https://identitytoolkit.googleapis.com/v1/accounts:signUp?key=' + this.apiKey;
 
   constructor(private http: HttpClient) {
